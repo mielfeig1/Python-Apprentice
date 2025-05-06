@@ -82,9 +82,13 @@ def is_funny(definition):
     """
     
     # Return True if the definition contains any of the funny words, False otherwise
-    lst = definition.split("")
-    if 
-    return False
+    lst = definition.split(" ")
+    for w in lst:
+        if w in ['funny', 'silly', 'hilarious']:
+            return True
+        else:
+            return False
+
 
 def update_listbox(db):
     """
@@ -96,15 +100,18 @@ def update_listbox(db):
 
     # This function will return a list of definitions to be displayed in the listbox, like
     # the one below. (For your function, you should set this list to the empty list)
-    l = [
-        "Item 1: Fake Definition 1",
-        "Item 2: Fake Definition 2",
-        "Item 3: fake Definition 3"
-    ]
+    l = []
+
+    for key, value in db.items():
+        print(f"{key} = {value}")
+        l.append(f"{key} = {value}")
+
 
     # Add each definition to a string
     # iterate over the dict's key-value pairs and turn them into
     # strings, then add the strings to the list with .append()
+
+    
 
     return l
 
